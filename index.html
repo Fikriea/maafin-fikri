@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maaf ya, Sayang!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: url('FIKRI.jpg') no-repeat center center fixed; /* Ganti 'foto-latar.jpg' dengan nama file gambar Anda */
+            background-size: cover; /* Membuat gambar memenuhi seluruh layar */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: white; /* Warna teks putih agar kontras dengan gambar */
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: white; /* Warna teks putih */
+            background: rgba(0, 0, 0, 0.5); /* Latar belakang transparan hitam untuk teks */
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .button {
+            margin: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: #f67280;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .button:hover {
+            background: #c06c84;
+        }
+
+        .love {
+            font-size: 2rem;
+            color: red;
+            animation: flyUp 1.5s ease-out forwards, fadeOut 1.5s ease-out forwards;
+            position: absolute;
+        }
+
+        @keyframes flyUp {
+            0% {
+                transform: scale(1) translateY(0);
+            }
+            100% {
+                transform: scale(1.5) translateY(-100px);
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.8rem;
+            color: white;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+    </style>
+<script>
+    function showThanks() {
+        alert('Terimakasih ya, sayang, sudah maafin aku ❤️');
+
+        // Membuat banyak elemen love
+        for (let i = 0; i < 50; i++) { // Atur jumlah love (misalnya 50)
+            const love = document.createElement('div');
+            love.textContent = '❤️';
+            love.className = 'love';
+
+            // Menentukan posisi acak di layar
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+
+            love.style.left = `${x}px`;
+            love.style.top = `${y}px`;
+            love.style.position = 'absolute';
+
+            document.body.appendChild(love);
+
+            // Menghapus elemen love setelah animasi selesai
+            setTimeout(() => love.remove(), 1500);
+        }
+    }
+
+    function moveButton(button) {
+        const x = Math.random() * 200 - 100; // Jarak horizontal lebih besar
+        const y = Math.random() * 200 - 100; // Jarak vertikal lebih besar
+        button.style.transform = `translate(${x}px, ${y}px)`;
+    }
+</script>
+
+</head>
+<body>
+    <h1>Maaf ya, Sayang❤️</h1>
+    <p>Aku bener-bener nggak bermaksud nyakitin kamu.kalau kamuu mau telfon besok siang bisa akuuuuu, atauu kalau tidak akuuu nanti pulang cepet pas di rs❤️</p>
+    <button class="button" onclick="showThanks()">Maafin Aku</button>
+    <button class="button move-button" onclick="moveButton(this)">Tidak Akan</button>
+    <footer>
+        Dibuat dengan ❤️ oleh Fikri
+    </footer>
+</body>
+</html>
